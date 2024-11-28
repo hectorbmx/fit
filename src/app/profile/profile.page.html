@@ -1,0 +1,39 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-title>Fit 4 life</ion-title>
+    <ion-buttons slot="end">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding" >
+  <!-- Card con imagen y nombre -->
+  
+  <ion-item>
+    <ion-avatar slot="start" (click)="selectPhoto()">
+      <img [src]="photo" alt="User's avatar" />
+    </ion-avatar>
+
+    <ion-content>
+      <div class="photo-preview">
+        <img [src]="photo" alt="Vista previa de la foto" />
+      </div>
+      <ion-button expand="block" (click)="savePhoto()">Guardar</ion-button>
+    </ion-content>
+
+    
+    <!-- Input de archivo oculto -->
+    <input type="file" id="fileInput" accept="image/*" (change)="onFileSelected($event)" style="display: none;" />
+    
+    <ion-label>{{ usuario?.name }} </ion-label>
+  </ion-item>
+  <ion-item>
+    <ion-input label="Celular" labelPlacement="stacked" placeholder="{{ usuario?.celular }}"></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-input label="Email" labelPlacement="stacked" placeholder="{{ usuario?.email }}"></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-input label="Fecha Nacimiento" labelPlacement="stacked" placeholder="{{ usuario?.fecha_nacimiento }}"></ion-input>
+  </ion-item>

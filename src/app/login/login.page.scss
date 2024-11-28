@@ -1,0 +1,45 @@
+ion-item {
+    --padding-top: 10px; /* Ajusta el espacio superior */
+    --padding-bottom: 10px; /* Ajusta el espacio inferior */
+  }
+  
+ion-label {
+    margin-bottom: 10px; /* Aumenta la distancia entre el label y el input */
+    font-size: 10px;
+    color: #4CAF50;    /* Color del texto para todos los labels */
+
+  }
+  
+  ion-input {
+    --padding-top: 40px; /* Ajusta el padding del input */
+    --padding-bottom: 10px;
+  }
+  #login-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    padding: 20px;
+    background-color: #ffffff; /* Color de fondo del contenedor */
+    border-radius: 10px; /* Agregar bordes redondeados si lo deseas */
+  }
+  
+
+  ion-content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+  }
+  
+  form {
+    width: 100%;
+    max-width: 400px; /* Puedes ajustar el ancho máximo del formulario */
+  }
+  
+  ion-card {
+    width: 100%;
+  }
+  
+  
+  

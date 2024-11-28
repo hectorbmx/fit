@@ -1,0 +1,112 @@
+
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-title>Fit 4 life</ion-title>
+    <ion-buttons slot="end">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding" >
+  <!-- Card con imagen y nombre -->
+  
+  <ion-item>
+    <ion-avatar slot="start">
+      <img alt="Silhouette of a person's head" src="https://ionicframework.com/docs/img/demos/avatar.svg" />
+    </ion-avatar>
+    <ion-label>{{ usuario?.name }} </ion-label>
+      <!-- <a [routerLink]="['/perfil']">{{ usuario?.name }}</a> -->
+
+  </ion-item>
+      <!-- <ion-card-title>Héctor Barreto</ion-card-title> -->
+      <!-- <ion-card-title>Bienvenido, {{ usuario?.name }}</ion-card-title> -->
+
+    
+  
+
+  <!-- Título del entrenamiento -->
+  <ion-item lines="full">
+    <ion-chip (click)="abrirModalDatePicker()">
+      {{ fechaActual }}
+    </ion-chip>
+    <ion-modal [isOpen]="isModalOpen" (willDismiss)="cerrarModal($event)">
+      <ng-template>
+        <ion-header>
+          <ion-toolbar>
+            <ion-title>Seleccionar Fecha</ion-title>
+            <ion-buttons slot="end">
+              <ion-button (click)="cerrarModal()">Cerrar</ion-button>
+            </ion-buttons>
+          </ion-toolbar>
+        </ion-header>
+        <ion-content>
+          <ion-datetime 
+            presentation="date" 
+            [value]="fechaActual"
+            (ionChange)="onFechaSeleccionada($event)"
+          ></ion-datetime>
+        </ion-content>
+      </ng-template>
+    </ion-modal>
+  
+    <ion-chip>todos los entrenamientos</ion-chip>
+    <!-- <ion-chip>MIS ENTRENOS</ion-chip> -->
+    
+  </ion-item>
+
+  <!-- Lista de partes del entrenamiento -->
+<!-- Aqui se carga el entrenamiento del dia en curso--->
+
+    <ion-item *ngIf="entreno && entreno.titulo">
+        <ion-label>Entrenamiento del dia<br>
+          <ion-chip color="primary">{{ entreno.titulo }} </ion-chip>
+          </ion-label>
+    </ion-item>
+
+<ion-accordion-group *ngIf="entreno">
+  
+  <ion-accordion *ngIf="entreno.seccion1" value="seccion1">
+    <ion-label>entreno.titulo</ion-label>
+    <ion-item slot="header" color="light">
+      <ion-label>Parte 1</ion-label>
+    </ion-item>
+    <div class="ion-padding" slot="content">
+      {{ entreno.seccion1 }}
+    </div>
+  </ion-accordion>
+  <ion-accordion *ngIf="entreno.seccion2" value="seccion2">
+    <ion-item slot="header" color="light">
+      <ion-label>Parte 2</ion-label>
+    </ion-item>
+    <div class="ion-padding" slot="content">
+      {{ entreno.seccion2 }}
+    </div>
+  </ion-accordion>
+  <ion-accordion *ngIf="entreno.seccion3" value="seccion3">
+    <ion-item slot="header" color="light">
+      <ion-label>Parte 3</ion-label>
+    </ion-item>
+    <div class="ion-padding" slot="content">
+      {{ entreno.seccion3 }}
+    </div>
+  </ion-accordion>
+  <ion-accordion *ngIf="entreno.seccion4" value="seccion4">
+    <ion-item slot="header" color="light">
+      <ion-label>Parte 4</ion-label>
+    </ion-item>
+    <div class="ion-padding" slot="content">
+      {{ entreno.seccion4 }}
+    </div>
+  </ion-accordion>
+</ion-accordion-group>
+ <!-- Si no hay entrenos -->
+ <div class="badge-container">
+  <ion-badge expand="block" *ngIf="noEntreno" color="danger">
+    No hay entrenos registrados
+  </ion-badge>
+</div>
+
+
+<ion-button expand="block">Entrenaste hoy?</ion-button>
+</ion-content>

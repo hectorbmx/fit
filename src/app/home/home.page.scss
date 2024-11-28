@@ -1,0 +1,40 @@
+ion-card {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  background: linear-gradient(135deg, #4c86d6, #a0c4ff);
+  color: white;
+  border-radius: 10px;
+
+  ion-avatar {
+    margin-right: 10px;
+  }
+
+  ion-card-title {
+    font-size: 1.2rem;
+    font-weight: bold;
+  }
+}
+
+.entreno-title {
+  font-size: 1.2rem;
+  font-weight: bold;
+  text-align: center;
+}
+
+ion-list {
+  margin-top: 1rem;
+  ion-item {
+    border-bottom: 1px solid #ccc;
+    font-size: 1.1rem;
+    font-weight: bold;
+  }
+  .badge-container {
+    display: flex;
+    justify-content: center; /* Centrar horizontalmente */
+    align-items: center;    /* Centrar verticalmente */
+    height: 100%;           /* Ocupa toda la altura del contenedor */
+    text-align: center;     /* Asegura que el texto del badge esté centrado */
+  }
+  
+}

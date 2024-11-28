@@ -1,0 +1,30 @@
+<ion-menu contentId="main-content">
+  <ion-header>
+    <ion-toolbar>
+      <ion-title>Menú</ion-title>
+    </ion-toolbar>
+  </ion-header>
+  <ion-content>
+    <ion-list>
+      <ion-item (click)="goToHome()" routerDirection="root">Inicio</ion-item>
+      <!-- <ion-item (click)="goToProfile()">Perfil</ion-item> -->
+      <ion-item routerLink="/profile">Perfil</ion-item>
+
+      <!-- <ion-item routerLink="/profile">Perfil</ion-item> -->
+      <ion-item (click)="logout()">Cerrar sesión</ion-item>
+      <!-- <ion-button fill="clear" routerLink="/profile"> -->
+
+    </ion-list>
+  </ion-content>
+</ion-menu>
+<div class="ion-page" id="main-content">
+  <ion-header>
+    <ion-toolbar>
+      <ion-buttons slot="start">
+        <ion-menu-button></ion-menu-button>
+      </ion-buttons>
+      <ion-title>Menu</ion-title>
+    </ion-toolbar>
+  </ion-header>
+  <!-- <ion-content class="ion-padding"> Tap the button in the toolbar to open the menu. </ion-content> -->
+</div>

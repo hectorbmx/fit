@@ -1,0 +1,15 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Vista Previa</ion-title>
+    <ion-buttons slot="end">
+      <ion-button (click)="dismiss()">Cerrar</ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div class="photo-preview">
+    <img [src]="photo" alt="Vista previa de la foto" />
+  </div>
+  <ion-button expand="block" (click)="savePhoto()">Guardar</ion-button>
+</ion-content>

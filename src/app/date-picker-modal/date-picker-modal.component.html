@@ -1,0 +1,14 @@
+<ion-modal [isOpen]="isOpen" (willDismiss)="cerrarModal()">
+  <ion-header>
+    <ion-toolbar>
+      <ion-title>Selecciona la Fecha</ion-title>
+      <ion-buttons slot="end">
+        <ion-button (click)="cerrarModal()">Cerrar</ion-button>
+      </ion-buttons>
+    </ion-toolbar>
+  </ion-header>
+
+  <ion-content>
+    <ion-datetime (ionChange)="onDateSelected($event)" presentation="date"></ion-datetime>
+  </ion-content>
+</ion-modal>
